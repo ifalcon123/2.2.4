@@ -1,0 +1,15 @@
+Insert into players(player_name, team, age, position) Values('Pike Albrecht', 'Michigan', '21', 'Guard');
+Insert into players(player_name, team, age, position) Values('Brad Anlauf', 'Michigan', '20', 'Forward');
+Insert into players(player_name, team, age, position) Values('Max Biefeldt', 'Michigan', '20', 'Forward');
+Insert into players(player_name, team, age, position) Values('Andrew Dakich', 'Michigan', '19', 'Guard');
+Insert into players(player_name, team, age, position) Values('Mark Donnal', 'Michigan', '18', 'Forward');
+Insert into players(player_name, team, age, position) Values('Jon Horford', 'Michigan', '22', 'Forward');
+Insert into players(player_name, team, age, position) Values('Zak Irvin', 'Michigan', '19', 'Guard');
+Insert into players(player_name, team, age, position) Values('Caris LeVert', 'Michigan', '19', 'Guard');
+Insert into players(player_name, team, age, position) Values('Sean Lonergan', 'Michigan', '18', 'Guard');
+Insert into players(player_name, team, age, position) Values('Cole McConnell', 'Michigan', '19', 'Guard');
+Insert into players(player_name, team, age, position) Values('Mitch McGary', 'Michigan', '21', 'Forward');
+Insert into players(player_name, team, age, position) Values('Jordan Morgan', 'Michigan', '22', 'Forward');
+Insert into players(player_name, team, age, position) Values('Glenn Robinson III', 'Michigan', '20', 'Forward');
+Insert into players(player_name, team, age, position) Values('Nik Stauskas', 'Michigan', '20', 'Guard');
+Insert into players(player_name, team, age, position) Values('Derrick Walton Jr.', 'Michigan', '18', 'Guard');

@@ -1,0 +1,14 @@
+INSERT INTO players(player_name, Team, Age, Position) VALUES ('Eli Carter', 'Florida', '22', 'Guard');
+INSERT INTO players(player_name, Team, Age, Position) VALUES ('Billy Donovan', 'Florida', '24', 'Guard');
+INSERT INTO players(player_name, Team, Age, Position) VALUES ('Lexx Edwards', 'Florida', '20', 'Guard');
+INSERT INTO players(player_name, Team, Age, Position) VALUES ('Will Yeguete', 'Florida', '22', 'Forward');
+INSERT INTO players(player_name, Team, Age, Position) VALUES ('Casey Prather', 'Florida', '22', 'Forward');
+INSERT INTO players(player_name, Team, Age, Position) VALUES ('Patric Young', 'Florida', '22', 'Center');
+INSERT INTO players(player_name, Team, Age, Position) VALUES ('Jacob Kurts', 'Florida', '21', 'Forward');
+INSERT INTO players(player_name, Team, Age, Position) VALUES ('Dillon Graham', 'Florida', '20', 'Guard');
+INSERT INTO players(player_name, Team, Age, Position) VALUES ('Kasey Hill', 'Florida', '20', 'Guard');
+INSERT INTO players(player_name, Team, Age, Position) VALUES ('Scottie Wilbekin', 'Florida', '20', 'Guard');
+INSERT INTO players(player_name, Team, Age, Position) VALUES ('Dorian Finney-Smith', 'Florida', '20', 'Forward');
+INSERT INTO players(player_name, Team, Age, Position) VALUES ('Chris Walker', 'Florida', '19', 'Forward');
+INSERT INTO players(player_name, Team, Age, Position) VALUES ('Michael Frazier II', 'Florida', '20', 'Guard');
+INSERT INTO players(player_name, Team, Age, Position) VALUES ('DeVon', 'Florida', '21', 'Forward');

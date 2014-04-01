@@ -1,0 +1,14 @@
+Insert into players(player_name, team, age, position) Values('Akoy Agau', 'Louisville', '19', 'Forward');
+Insert into players(player_name, team, age, position) Values('Dillon Avare', 'Louisville', '19', 'Guard');
+Insert into players(player_name, team, age, position) Values('Wayne Blackshear', 'Louisville', '22', 'Guard');
+Insert into players(player_name, team, age, position) Values('Anton Gill', 'Louisville', '19', 'Guard');
+Insert into players(player_name, team, age, position) Values('Luke Hancock', 'Louisville', '24', 'Guard');
+Insert into players(player_name, team, age, position) Values('Motrezl Harrell', 'Louisville', '20', 'Forward');
+Insert into players(player_name, team, age, position) Values('Tim Henderson', 'Louisville', '22', 'Guard');
+Insert into players(player_name, team, age, position) Values('Chris Jones', 'Louisville', '22', 'Guard');
+Insert into players(player_name, team, age, position) Values('David Levitch', 'Louisville', '19', 'Guard');
+Insert into players(player_name, team, age, position) Values('Mangok Mathiang', 'Louisville', '21', 'Forward');
+Insert into players(player_name, team, age, position) Values('Terry Rozier', 'Louisville', '20', 'Guard');
+Insert into players(player_name, team, age, position) Values('Russ Smith', 'Louisville', '22', 'Guard');
+Insert into players(player_name, team, age, position) Values('Stephan Van Treese', 'Louisville', '23', 'Forward');
+Insert into players(player_name, team, age, position) Values('Kevin Ware', 'Louisville', '21', 'Guard');

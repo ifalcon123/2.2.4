@@ -1,0 +1,15 @@
+Insert into players(player_name, team, age, position) Values('Ron Baker', 'Wichita State', '21', 'Guard');
+Insert into players(player_name, team, age, position) Values('D.J. Bowles', 'Wichita State', '19 ', 'Guard');
+Insert into players(player_name, team, age, position) Values('Zach Bush', 'Wichita State', '20', 'Forward');
+Insert into players(player_name, team, age, position) Values('Darius Carter', 'Wichita State', '21', 'Forward');
+Insert into players(player_name, team, age, position) Values('Kadeem Colby', 'Wichita State', '24', 'Center');
+Insert into players(player_name, team, age, position) Values('Tekele Cotton ', 'Wichita State', '20', 'Guard');
+Insert into players(player_name, team, age, position) Values('Cleanthony', 'Wichita State', '22', 'Forward');
+Insert into players(player_name, team, age, position) Values('Derail Green', 'Wichita State', '20', 'Forward');
+Insert into players(player_name, team, age, position) Values('Ria n Holland', 'Wichita State', '19', 'Guard');  
+Insert into players(player_name, team, age, position) Values('Chadrack Lufile', 'Wichita State', '23', 'Forward ');
+Insert into players(player_name, team, age, position) Values( 'Shaquille Morris', 'Wichita State', '20', 'Forward');
+Insert into players(player_name, team, age, position) Values('John Robert Simon', 'Wichita State', '19', 'Guard');
+Insert into players(player_name, team, age, position) Values('Fred VanVleet', 'Wichita State', '20', 'Guard');
+Insert into players(player_name, team, age, position) Values('Evan Wessel', 'Wichita State', '21', 'Guard');
+Insert into players(player_name, team, age, position) Values('Nick Wiggins', 'Wichita State', '23', 'Guard');

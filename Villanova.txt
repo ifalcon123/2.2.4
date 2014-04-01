@@ -1,0 +1,13 @@
+Insert into players(player_name, team, age, position) Values('Ryan Acidiacono', 'Villanova', '20', 'Guard');
+Insert into players(player_name, team, age, position) Values('James Bell', 'Villanova', '22', 'Guard');
+Insert into players(player_name, team, age, position) Values('Tony Chennault', 'Villanova', '22', 'Guard');
+Insert into players(player_name, team, age, position) Values('Dylan Ennis', 'Villanova', '22', 'Guard');
+Insert into players(player_name, team, age, position) Values('Patrick Farrell', 'Villanova', '19', 'Forward');
+Insert into players(player_name, team, age, position) Values('Josh Hart', 'Villanova', '19', 'Guard');
+Insert into players(player_name, team, age, position) Values('Darrun Hilliard II', 'Villanova', '20', 'Guard');
+Insert into players(player_name, team, age, position) Values('Kris Jenkins', 'Villanova', '20', 'Forward');
+Insert into players(player_name, team, age, position) Values('Henry Lowe', 'Villanova', '19', 'Guard');
+Insert into players(player_name, team, age, position) Values('Nick McMahon', 'Villanova', '22', 'Guard');
+Insert into players(player_name, team, age, position) Values('Daniel Ochefu', 'Villanova', '20', 'Forward');
+Insert into players(player_name, team, age, position) Values('JayVaughn Pinkston', 'Villanova', '22', 'Forward');
+Insert into players(player_name, team, age, position) Values('Darryl Reynolds', 'Villanova', '20', 'Forward');

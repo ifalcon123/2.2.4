@@ -1,0 +1,15 @@
+Insert into player(player, team, age, position) Values('Eric Conklin', 'Arizona', '19', 'Forward');
+Insert into player(player, team, age, position) Values('Aaron Gordon', 'Arizona', '18', 'Forward');
+Insert into player(player, team, age, position) Values('Jacob Hazzard', 'Arizona', '20', 'Guard');
+Insert into player(player, team, age, position) Values('Rondae Hollis-Jefferson', 'Arizona', '19', 'Forward');
+Insert into player(player, team, age, position) Values('Chris Johnson', 'Arizona', '-', 'Forward');
+Insert into player(player, team, age, position) Values('Nick Johnson', 'Arizona', '21', 'Guard');
+Insert into player(player, team, age, position) Values('Matt Korcheck', 'Arizona', '22', 'Forward');
+Insert into player(player, team, age, position) Values('Trey Mason', 'Arizona', '19', 'Guard');
+Insert into player(player, team, age, position) Values('Jordin Mayes', 'Arizona', '22', 'Guard');
+Insert into player(player, team, age, position) Values('T.J. McConnell', 'Arizona', '22', 'Guard');
+Insert into player(player, team, age, position) Values('Drew Mellon', 'Arizona', '20', 'Forward');
+Insert into player(player, team, age, position) Values('Zach Peters', 'Arizona', '21', 'Forward');
+Insert into player(player, team, age, position) Values('Elliott Pitts', 'Arizona', '18', 'Guard');
+Insert into player(player, team, age, position) Values('Kaleb Tarczewski', 'Arizona', '21', 'Center');
+Insert into player(player, team, age, position) Values('Gabe York', 'Arizona', '20', 'Guard');

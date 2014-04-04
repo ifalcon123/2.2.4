@@ -3,7 +3,7 @@ import os.path
 import PIL
 import Image
 """ 2014.2.24 """
-dir = "/home/" + argv[3] + "/clevenge/" + "/students/" + "/cleurq4/"
+dir = "/home/" + argv[3] + "/clevenge/" + "/students/" + "/cleurq4/" + "/images/"
 filename = os.path.join(dir, argv[1], argv[2])
 
 thumbname = os.path.join(os.path.splitext(filename)[0] + "thumb.jpg")

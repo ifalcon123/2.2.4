@@ -68,7 +68,7 @@ else if (isset($_POST['firstname']) &&
 	$result_image = mysql_query($query);
 
 	display_table($playerID, $result_image);
-}
+{
 
 // HTML to display the form on this page.
 echo '<br />Search for Players and Teams below.';

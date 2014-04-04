@@ -35,7 +35,7 @@ if (isset($_POST['player_input']) &&
 	// Call a function defined later in this file, with two arguments
 	display_table($playerID, $result_image);
 }
-
+{
 // When the POST protocol is invoked, checks case 2 for the data entered in the form.
 // The statements executed by this conditional mimic the ones in the previous conditional block
 else if (isset($_POST['firstname']) &&

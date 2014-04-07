@@ -9,9 +9,9 @@
 **/
 
 // access the login.php file which allows the program to log-in to the Database that contains the 
-require_once 'login.php'
+require_once 'login.php';
 $db_server = mysql_connect($db_hostname, $db_username, $db_password);
-if (!$db_server) die("Unable to connect to MySQL: " mysql_error()); // If cannot connect display the message in quotations.
+if (!$db_server) die("Unable to connect to MySQL: " . mysql_error()); // If cannot connect display the message in quotations.
 mysql_select_db($db_database) // direct towards database
 	or die("unable to connect to database: " . mysql_error()); //  or kill the attempt to connect.
 
@@ -32,62 +32,65 @@ echo <<<_END
 _END;
 
 // When the POST protocol is invoked, checks case 1 for the data entered in the form.	
-if (isset($_POST['player_input']) &&
-	isset($_POST['team_input']) &&
-	$_POST['player_input'] != '' &&
-	$_POST['team_input'] != '')
+if (isset($_POST['player_name']) &&
+	isset($_POST['team']) &&
+	$_POST['player_name'] != '' &&
+	$_POST['team'] != '')
 {
 	// Gathers the information provided in the form with the POST protocol
 	// creates and submits MySQL queries using it, explained in 2.2.3
-	$query = "SELECT * FROM players WHERE player_input='" . 
-		$_POST['player_input'] . "' AND team_input='" . $_POST['team_input'] . "'";
+	$query = "SELECT * FROM players WHERE player_name='" . 
+		$_POST['player_name'] . "' AND team='" . $_POST['team'] . "'";
 	$result = mysql_query($query);
 	$row = mysql_fetch_row($result);
 	$resultID = $row[0];
-	$query = "SELECT * FROM images WHERE player_input='" . $artistID . "'";
+	$query = "SELECT * FROM images WHERE player_name='" . $resultID . "'";
 	$result_image = mysql_query($query);
+	
 	// Call a function defined later in this file, with two arguments
 	display_table($resultID, $result_image);
 }
 
 // When the POST protocol is invoked, checks case 2 for the data entered in the form.
 // The statements executed by this conditional mimic the ones in the previous conditional block	
-else if (isset($_POST['player_input']) &&
-	isset($_POST['team_input']) &&
-	$_POST['player_input'] != '' &&
-	$_POST['team_input'] == '')
+else if (isset($_POST['player_name']) &&
+	isset($_POST['team']) &&
+	$_POST['player_name'] != '' &&
+	$_POST['team'] == '')
 {
-	$query = "SELECT * FROM players WHERE player_input='" . $_POST['player_input'] . "'";
+	$query = "SELECT * FROM players WHERE player_name='" . $_POST['player_name'] . "'";
 	$result = mysql_query($query);
 	$row = mysql_fetch_row($result);
 	$resultID = $row[0];
-	$query = "SELECT * FROM images WHERE player_input='" . $artistID . "'";
+	$query = "SELECT * FROM images WHERE player_name='" . $resultID . "'";
 	$result_image = mysql_query($query);
+	
 	display_table($resultID, $result_image);
 }
 
 // When the POST protocol is invoked, checks case 3 for the data entered in the form.
 // The statements executed by this conditional mimic the ones in the previous conditional block	
-else if (isset($_POST['player_input']) &&
-	isset($_POST['team_input']) &&
-	$_POST['player_input'] == '' &&
-	$_POST['team_input'] != '')
+else if (isset($_POST['player_name']) &&
+	isset($_POST['team']) &&
+	$_POST['player_name'] == '' &&
+	$_POST['team'] != '')
 {
-	$query = "SELECT * FROM players WHERE player_input='" . $_POST['team_input'] . "'";
+	$query = "SELECT * FROM players WHERE player_name='" . $_POST['team'] . "'";
 	$result = mysql_query($query);
 	$row = mysql_fetch_row($result);
 	$resultID = $row[0];
-	$query = "SELECT * FROM images WHERE player_input='" . $resultID . "'";
+	$query = "SELECT * FROM images WHERE player_name='" . $resultID . "'";
 	$result_image = mysql_query($query);
+	
 	display_table($resultID, $result_image);
 }
 
 // HTML to display the form on this page.
-echo '<br />Search the NCAA database using the fields below.';
+echo '<br />Search the art database using the fields below.';
 // Sets POST as method of data submission
-echo '<form action="index_recreate.php" method="post"><pre>'; 
-echo 'player name <input type="text" name="player_input" />';
-echo '<br />Team name <input type="text" name="team_input" />';
+echo '<form action="Index_recreate.php" method="post"><pre>'; 
+echo 'Player Name <input type="text" name="player_name" />';
+echo '<br /> Team Name <input type="text" name="team" />';
 // Creates the SEARCH button which calls the POST method with the data entered
 echo '<br /><input type="submit" value="SEARCH" />'; 
 echo '</pre></form>';
@@ -118,10 +121,11 @@ function display_table($key, $image_info_table)
 			$image_path = pathinfo($image_name);
 			$id_name = $image_path['filename'];
 			$div_id = $id_name . "popin";
+			
 
 			// Accesses the information about the artist associated with the image stored previously
-			$firstname = $row[2];
-			$lastname = $row[3];
+			$player_name = $row[4];
+			
 			// Remember the mod operator, this one gives us the remainder when $count is divided by 6
 			if ($count % 6 == 0)
 			{
@@ -129,7 +133,7 @@ function display_table($key, $image_info_table)
 				$closed_tr = 0;
 			}
 			$domain = $_SERVER['SERVER_NAME'];
-			echo "<TD><img id='$id_name' src='http://$domain/$key/$thumb_name' onmouseover=" . '"' . "showDetailedView('$div_id', '$id_name', '$player_input')" . '" />';
+			echo "<TD><img id='$id_name' src='http://$domain/$key/$thumb_name' onmouseover=" . '"' . "showDetailedView('$div_id', '$id_name', '$player_name')" . '" />';
 			echo "<div id = '$div_id'></div></TD>";
 			if ($count % 6 == 5)
 			{

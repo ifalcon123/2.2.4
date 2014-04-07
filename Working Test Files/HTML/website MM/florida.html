@@ -1,0 +1,98 @@
+<html>
+<head>
+<center>
+	<style = "text/css">
+		#img1popout {
+			z-index: 5;
+			position: absolute;
+			width: 400px;
+			height: 140px;
+			top: 50px;
+			border: 1px dashed #0021A5;
+			background-color: #FF4A00;
+		}
+		#img1popin{}
+	
+		body
+		{
+			background-color:#0021A5;
+		}
+	</style>
+	<script type = "text/javascript">
+		function initPopout()
+		{
+			var Casey_Prather_thum = document.getElementById("image1"); 
+			
+			Casey_Prather_thum.onmouseover = showDetailedView;
+		}
+
+		function showDetailedView()
+		{
+			var im1 = document.getElementById("img1popin");
+			im1.id = "img1popout";
+			im1.innerHTML = "<br /><TABLE><TR><TH rowspan='3'><img src='thumbnails/Casey_Prather_thum.jpg' width='100'><TH align='left'>Player Name: <TH align='left'>Casey Prather<TR><TH align='left'> Player Number: <TH align='left'> #24<TR><TH align='left'>Position: <TH align='left'>Foward<TR></TABLE> ";
+			var popOut = document.getElementById("img1popout");
+			popOut.onmouseout = hideDetailedView;			
+		}
+
+		function hideDetailedView()
+		{
+			var im1 = document.getElementById("img1popout");
+			im1.id = "img1popin";
+			im1.innerHTML = "";
+		}
+	</script>
+</head>
+<body onload="initPopout();">
+<img src="teams/florida_state.png" alt="Florida" width="84" height="60">
+<table>
+	<caption style="color:#FF4A00">Florida Roster:</caption>
+	<br>
+	<tbody>
+	<tr>
+		<td>
+			<img id="image1" src="thumbnails/Casey_Prather_thum.jpg"><div id = "img1popin"></div>
+		</td>
+		<td>
+			<img src="thumbnails/Alex_Murphy_thum.jpg">
+		</td>
+		<td>
+			<img src="thumbnails/DeVon_Walker_thum.jpg">
+		</td>
+				<td>
+			<img src="thumbnails/scottie_wilbekin_thum.jpg">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="thumbnails/Dillon_Graham_thum.jpg">
+		</td>
+		<td>
+			<img src="thumbnails/Dorian_Finney-Smith_thum.jpg">
+		</td>
+		<td>
+			<img src="thumbnails/Eli_Carter_thum.jpg">
+		</td>
+		<td>
+			<img src="thumbnails/Jacob_Kurtz_thum.jpg">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="thumbnails/Lexx_Edwards_thum.jpg">
+		</td>
+		<td>
+			<img src="thumbnails/Michael_Frazier_II_thum.jpg">
+		</td>
+		<td>
+			<img src="thumbnails/patric_young_thum.jpg">
+		</td>
+		<td>
+			<img src="thumbnails/Will_Yeguete_thum.jpg">
+	</tr>
+	</tbody>
+</table>
+<br>
+</body>
+</center>
+</html>

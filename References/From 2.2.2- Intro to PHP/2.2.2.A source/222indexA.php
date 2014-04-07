@@ -1,14 +1,16 @@
 <?php
 
 // HTML to display the form on this page.
-echo '<br />Search the art database using the fields below.';
+echo '<br />Search the NCAA database using the fields below.';
 // Sets POST as method of data submission
-echo '<form action="222indexA.php" method="post"><pre>'; 
-echo 'First Name <input type="text" name="firstname" />';
-echo '<br />Last Name <input type="text" name="lastname" />';
+echo '<form action="index_recreate.php" method="post"><pre>'; 
+echo 'Player name <input type="text" name="player_input" />';
+echo '<br />Team name <input type="text" name="team_input" />';
 // Creates the SEARCH button which calls the POST method with the data entered
 echo '<br /><input type="submit" value="SEARCH" />'; 
 echo '</pre></form>';
+
+
 
 /** 
  * Generates HTML to render table of images returned by user query

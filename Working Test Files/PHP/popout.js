@@ -2,7 +2,7 @@
 /**
  * CSE Activity
  * 
- * Index_recreate.php models use of PHP in conjunction with MySQL, JavaScript, and CSS
+ * index.php models use of PHP in conjunction with MySQL, JavaScript, and CSS
  * @copyright Trevor Lutjen and group 3
  * @version 2014.2.24
  */

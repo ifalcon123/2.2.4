@@ -14,7 +14,7 @@ function hideDetailedView() {
     unpopped.id = popping;
 }
 
-function showDetailedView(currentDiv, imagename, firstname) {
+function showDetailedView(currentDiv, imagename, player_) {
 	var popframe = document.getElementById(currentDiv);
     popping = popframe.id;
 	popframe.id = "popout";

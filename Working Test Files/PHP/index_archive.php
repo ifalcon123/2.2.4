@@ -1,12 +1,12 @@
 <?php
 /**
- * CSE Activity 2.2.2 IntroducingPHP
- * 
- * 222indexB.php models use of PHP in conjunction with MySQL, JavaScript, and CSS
- * @copyright Unpublished work 2013 Project Lead The Way
- * @version 2014.2.24
- */
- 
+*224 CSE HOUR 3
+*Trevor Lutjen PHP wizard
+*Basic php website
+*
+*Verison .01
+**/
+
 /* 
 This block allows our program to access the MySQL database.
 Elaborated on in 2.2.3.
@@ -16,8 +16,8 @@ $db_server = mysql_connect($db_hostname, $db_username, $db_password);
 if (!$db_server) die("Unable to connect to MySQL: " . mysql_error());
 mysql_select_db($db_database)
 	or die("Unable to select database: " . mysql_error());
-	
-echo "<script type='text/javascript' src='222popouts.js'></script>";
+
+echo "<script type='text/javascript' src='popouts.js'></script>";
 echo <<<_END
 	<style = "text/css">
 		#popout {
@@ -31,42 +31,19 @@ echo <<<_END
 		}	
 	</style>
 _END;
-	
-// $_COOKIE is a data structure that holds all cookies for this site.
-// This conditional verifies that the cookie 'username' contains data.
-// That would symbolize that the user is logged in as an artist.
-if (isset($_COOKIE['username']))
-{
-	$username = $_COOKIE['username']; // Retrieves the value of the cookie
-	
-	// Dynamically respond to the data in the cookie to recognize the user
-	// An echo statement is used to display something in PHP. Plain text
-	// shows up as such, and html code enclosed in quotes functions as normal html.
-	echo "Welcome back, " . $username . 
-		", click <a href='222artist_portalB.php'>here to go to the Artist's page</a>.<br />";
-	echo "Click <a href='222logoutB.php'>here to Log Out</a>...<br />";
-	echo "<br /><br />Enter information in the fields at the bottom of the page to search the image database.<br /><br />";
-}
-else
-{
-	echo "Click <a href='222artist_portalB.php'>here to log in as an artist</a>.<br />";
-	echo "Or click <a href='222account_creationB.php'>here to create an artist account</a>.<br />";
-}
-	
+
 // When the POST protocol is invoked, checks case 1 for the data entered in the form.	
-if (isset($_POST['firstname']) &&
-	isset($_POST['lastname']) &&
-	$_POST['firstname'] != '' &&
-	$_POST['lastname'] != '')
+if (isset($_POST['player_name']) &&
+	$_POST['player_name'] != ''
 {
 	// Gathers the information provided in the form with the POST protocol
 	// creates and submits MySQL queries using it, explained in 2.2.3
-	$query = "SELECT * FROM artists WHERE firstname='" . 
-		$_POST['firstname'] . "' AND lastname='" . $_POST['lastname'] . "'";
-	$result_artist = mysql_query($query);
-	$row = mysql_fetch_row($result_artist);
+	$query = "SELECT * FROM players NATURAL JOIN images WHERE player_name='" . 
+		$_POST['player_name'] . "' AND team='" . $_POST['team'] . "'"; //Formulates the actual query.
+	$result = mysql_query($query); //Preforms the actual query.
+	$row = mysql_fetch_row($result);
 	$artistID = $row[0];
-	$query = "SELECT * FROM images WHERE username='" . $artistID . "'";
+	$query = "SELECT * FROM players NATURAL JOIN images WHERE team='" . $artistID . "'";
 	$result_image = mysql_query($query);
 	// Call a function defined later in this file, with two arguments
 	display_table($artistID, $result_image);
@@ -74,16 +51,16 @@ if (isset($_POST['firstname']) &&
 
 // When the POST protocol is invoked, checks case 2 for the data entered in the form.
 // The statements executed by this conditional mimic the ones in the previous conditional block	
-else if (isset($_POST['firstname']) &&
-	isset($_POST['lastname']) &&
-	$_POST['firstname'] != '' &&
-	$_POST['lastname'] == '')
+else if (isset($_POST['player_name']) &&
+	isset($_POST['team']) &&
+	$_POST['player_name'] != '' &&
+	$_POST['team'] == '')
 {
-	$query = "SELECT * FROM artists WHERE firstname='" . $_POST['firstname'] . "'";
-	$result_artist = mysql_query($query);
-	$row = mysql_fetch_row($result_artist);
+	$query = "SELECT * FROM players NATURAL JOIN images WHERE player_name='" . $_POST['player_name'] . "'";
+	$result = mysql_query($query);
+	$row = mysql_fetch_row($result);
 	$artistID = $row[0];
-	$query = "SELECT * FROM images WHERE username='" . $artistID . "'";
+	$query = "SELECT * FROM players NATURAL JOIN images WHERE team='" . $artistID . "'";
 	$result_image = mysql_query($query);
 	
 	display_table($artistID, $result_image);
@@ -91,27 +68,27 @@ else if (isset($_POST['firstname']) &&
 
 // When the POST protocol is invoked, checks case 3 for the data entered in the form.
 // The statements executed by this conditional mimic the ones in the previous conditional block	
-else if (isset($_POST['firstname']) &&
-	isset($_POST['lastname']) &&
-	$_POST['firstname'] == '' &&
-	$_POST['lastname'] != '')
+else if (isset($_POST['player_name']) &&
+	isset($_POST['team']) &&
+	$_POST['player_name'] == '' &&
+	$_POST['team'] != '')
 {
-	$query = "SELECT * FROM artists WHERE lastname='" . $_POST['lastname'] . "'";
-	$result_artist = mysql_query($query);
-	$row = mysql_fetch_row($result_artist);
+	$query = "SELECT * FROM players NATURAL JOIN images WHERE team='" . $_POST['team'] . "'";
+	$result = mysql_query($query);
+	$row = mysql_fetch_row($result);
 	$artistID = $row[0];
-	$query = "SELECT * FROM images WHERE username='" . $artistID . "'";
+	$query = "SELECT * FROM players NATURAL JOIN images WHERE team='" . $artistID . "'";
 	$result_image = mysql_query($query);
 	
 	display_table($artistID, $result_image);
 }
 
 // HTML to display the form on this page.
-echo '<br />Search the art database using the fields below.';
+echo '<br />Search the NCAA database using the fields below.';
 // Sets POST as method of data submission
-echo '<form action="222indexB.php" method="post"><pre>'; 
-echo 'First Name <input type="text" name="firstname" />';
-echo '<br />Last Name <input type="text" name="lastname" />';
+echo '<form action="index.php" method="post"><pre>'; 
+echo 'Player Name <input type="text" name="player_name" />';
+echo '<br />Team <input type="text" name="team" />';
 // Creates the SEARCH button which calls the POST method with the data entered
 echo '<br /><input type="submit" value="SEARCH" />'; 
 echo '</pre></form>';
@@ -137,8 +114,8 @@ function display_table($key, $image_info_table)
 		{
 			// The following few lines store information from specific cells in the data about an image
 			$image_row = mysql_fetch_row($image_info_table); // Advances a row each time it is called
-			$image_name = $image_row[5];
-			$thumb_name = $image_row[6];
+			$image_name = $image_row[1];
+			$thumb_name = $image_row[2];
 			$image_path = pathinfo($image_name);
 			$id_name = $image_path['filename'];
 			$div_id = $id_name . "popin";
@@ -146,7 +123,7 @@ function display_table($key, $image_info_table)
 			// Accesses the information about the artist associated with the image stored previously
 			$player_name = $row[0];
 			$team = $row[2];
-			$position = $row[4
+			$position = $row[4];
 			
 			// Remember the mod operator, this one gives us the remainder when $count is divided by 6
 			if ($count % 6 == 0)
@@ -155,7 +132,7 @@ function display_table($key, $image_info_table)
 				$closed_tr = 0;
 			}
 			$domain = $_SERVER['SERVER_NAME'];
-			echo "<TD><img id='$id_name' src='http://$domain/$key/$thumb_name' onmouseover=" . '"' . "showDetailedView('$div_id', '$id_name', '$firstname')" . '" />';
+			echo "<TD><img id='$id_name' src='http://$domain/students/cleurq4/images/$thumb_name' onmouseover=" . '"' . "showDetailedView('$div_id', '$id_name', '$player_name')" . '" />';
 			echo "<div id = '$div_id'></div></TD>";
 			if ($count % 6 == 5)
 			{

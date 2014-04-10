@@ -1,2 +1,0 @@
-insert into images(player_id, filename, thumbname, player) values('13', 'Michael Frazier II thum.jpg', 'michael_frazier_II', 'Michael Frazier II');
-insert into images(player_id, filename, thumbname, player) values('14', 'DeVon Walker thum.jpg', 'devon_walker', 'DeVon Walker');
